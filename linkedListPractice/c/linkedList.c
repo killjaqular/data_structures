@@ -2,14 +2,14 @@
 Adonay Pichardo, adonaypichardo@gmail.com
 
 @file
-linkedListPractice.c
+linkedList.c
 
 @description
 C implementation of a linked list structure.
 
 Example:
 CLI
-user@host#>./linkedListPractice 10 4 2 6 5
+user@host#>./linkedList 10 4 2 6 5
 10[10]
 4[10, 4]
 2[10, 4, 2]
@@ -22,7 +22,7 @@ user@host#>./linkedListPractice 10 4 2 6 5
 10[]
 
 STDIN
-user@host#>./linkedListPractice < someFile
+user@host#>./linkedList < someFile
 10[10]
 4[10, 4]
 2[10, 4, 2]
@@ -40,14 +40,12 @@ user@host#>./linkedListPractice < someFile
 #include <stdlib.h>
 
 typedef struct int_node_single{
-    // Holds an integer and a pointer to the next structure
-    int element;//Simply holds an int
+    int element;
     struct int_node_single* next;
 }INT_NODE_SINGLE_t;
 
 typedef struct int_node_single_list{
-    // Holds a list of INT_NODE_SINGLE_t
-    INT_NODE_SINGLE_t* head;//Start of the int_single_list
+    INT_NODE_SINGLE_t* head;
 }INT_NODE_SINGLE_LIST_t;
 
 // PROTOTYPES
