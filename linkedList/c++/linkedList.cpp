@@ -115,7 +115,7 @@ public:
             }
             read = read->next;
         }
-        cout << "]";
+        cout << "]\n";
     }
 
     IntNodeSingle* pop_las(){
@@ -145,7 +145,7 @@ int main(int argc, char* argv[]){
 
     // Make a new IntNodeSingleList
     IntNodeSingleList list;
-    IntNodeSingle node;
+    IntNodeSingle* node;
 
 /////////////////////////////////////////////////////////////////////////////////////////
 //CLI//CLI//CLI//CLI//CLI//CLI//CLI//CLI//CLI//CLI//CLI//CLI//CLI//CLI//CLI//CLI//CLI//CL
@@ -153,24 +153,29 @@ int main(int argc, char* argv[]){
     if(argc > 1){
         for(unsigned int counter = 1; counter < argc; counter++){
             // Make a new IntNodeSingle
-            node = IntNodeSingle();
+            node = new IntNodeSingle();
 
-            // Set the new IntNodeSingle's element
-            node.set(atoi(argv[counter]));
-            temp = node.get();
+            // Set the new node's element
+            node->set(atoi(argv[counter]));
+            temp = node->get();
             cout << temp;
 
-            // Insert into the IntNodeSingleList
-            list.app(&node);
+            // Insert into list
+            list.app(node);
 
-            // Print entire IntNodeSingleList
+            // Print entire list
             list.pri();
         }
 
         for(unsigned int counter = 1; counter < argc; counter++){
-            // Delete last node
+            // Pop last node
+            node = list.pop_las();
+            temp = node->get();
+            node->~IntNodeSingle();
+            cout << temp;
 
             // Print entire IntNodeSingleList
+            list.pri();
         }
 /////////////////////////////////////////////////////////////////////////////////////////
 //STDIN//STDIN//STDIN//STDIN//STDIN//STDIN//STDIN//STDIN//STDIN//STDIN//STDIN//STDIN//STD
@@ -180,20 +185,29 @@ int main(int argc, char* argv[]){
         while(!feof(stdin)){
             scanf("%d", &temp);
             // Make a new IntNodeSingle
+            node = new IntNodeSingle();
 
-            // Set the new IntNodeSingle's element
+            // Set the new node's element
+            node->set(temp);
+            cout << node->get();
 
-            // Insert into the IntNodeSingleList
+            // Insert into the list
+            list.app(node);
 
-            // Print entire IntNodeSingleList
+            // Print entire list
+            list.pri();
 
             total_items++;
         }
 
         for(unsigned int counter = 0; counter < total_items; counter++){
-            // Delete last node
+            // Pop last node
+            node = list.pop_las();
+            cout << node->get();
+            node->~IntNodeSingle();
 
             // Print entire IntNodeSingleList
+            list.pri();
         }
     }
 

@@ -93,7 +93,7 @@ int main(int argc, char* argv[]){
         }
 
         for(unsigned int counter = 1; counter < argc; counter++){
-            // Delete last node
+            // Pop last node
             node = INT_NODE_SINGLE_LIST_pop_las(list);
             temp = INT_NODE_SINGLE_get(node);
             INT_NODE_SINGLE_pri(node);
@@ -126,7 +126,7 @@ int main(int argc, char* argv[]){
         }
 
         for(unsigned int counter = 0; counter < total_items; counter++){
-            // Delete last node
+            // Pop last node
             node = INT_NODE_SINGLE_LIST_pop_las(list);
             temp = INT_NODE_SINGLE_get(node);
             INT_NODE_SINGLE_pri(node);
