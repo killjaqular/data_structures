@@ -42,7 +42,9 @@ from sys import argv, stdin, stdout
 def main():
     all_numbers = []
 
-#CLI#CLI#CLI#CLI#CLI#CLI#CLI#CLI#CLI#CLI#CLI#CLI#CLI#CLI#CLI#CLI#CLI#CLI#CLI#CLI#CLI#CLI#    
+#########################################################################################
+#CLI#CLI#CLI#CLI#CLI#CLI#CLI#CLI#CLI#CLI#CLI#CLI#CLI#CLI#CLI#CLI#CLI#CLI#CLI#CLI#CLI#CLI#
+#########################################################################################
     if(len(argv) > 1):
         try:
             for every_input in argv[1:]:
@@ -57,7 +59,9 @@ def main():
         for every_element in argv[1:]:
             stdout.write(f'{all_numbers.pop()}{all_numbers}\n')
 
+#########################################################################################
 #STDIN#STDIN#STDIN#STDIN#STDIN#STDIN#STDIN#STDIN#STDIN#STDIN#STDIN#STDIN#STDIN#STDIN#STDI
+#########################################################################################
     else:
         total = 0
         while True:
